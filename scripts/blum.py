@@ -1,4 +1,3 @@
-import requests
 import urllib
 import time
 import random

@@ -1,4 +1,3 @@
-import ssl
 import requests
 
 class BypassTLSv1_3(requests.adapters.HTTPAdapter):
