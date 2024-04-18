@@ -8,6 +8,17 @@ from scripts.blum        import Blum
 from scripts.rockyrabbit import RockyRabbitAPI
 from scripts.logger      import setup_custom_logger
 from scripts.cache_data  import SimpleCache
+
+from concurrent.futures import ThreadPoolExecutor
+
+
+executor = ThreadPoolExecutor(15)
+logger   = setup_custom_logger("tapper")
+
+with open('config.json') as f:
+    data             = json.load(f)
+    api_id           = data['api_id']
+    api_hash         = data['api_hash']
     admin            = data['admin']
     bot_token        = data['bot_token']
     auto_upgrade     = data['auto_upgrade']
