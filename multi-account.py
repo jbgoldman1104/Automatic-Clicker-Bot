@@ -1,3 +1,4 @@
+import asyncio
 import json, os, time, aiocron, psutil, sys, subprocess, platform, datetime
 
 from scripts.tapswap    import TapSwap
@@ -7,17 +8,6 @@ from scripts.logger     import setup_custom_logger
 from scripts.cache_data import SimpleCache
 from scripts.tg_client  import create_client, reload_sessions, reload_rabbit_url
 
-from telethon.sync import TelegramClient
-from telethon import functions, types, events, Button, errors
-
-from threading import Thread
-import concurrent.futures
-from concurrent.futures import ThreadPoolExecutor
-
-
-
-
-logger   = setup_custom_logger("mainapp")
 executor = ThreadPoolExecutor(15)
 
 with open('config.json') as f:
