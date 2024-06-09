@@ -1,3 +1,4 @@
+import os
 import json, time
 
 from scripts.tapswap     import TapSwap
