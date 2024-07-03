@@ -13,22 +13,6 @@ from concurrent.futures import ThreadPoolExecutor
 
 
 executor = ThreadPoolExecutor(15)
-logger   = setup_custom_logger("tapper")
-
-with open('config.json') as f:
-    data             = json.load(f)
-    api_id           = data['api_id']
-    api_hash         = data['api_hash']
-    admin            = data['admin']
-    bot_token        = data['bot_token']
-    auto_upgrade     = data['auto_upgrade']
-    max_tap_level    = data['max_tap_level']
-    max_charge_level = data['max_charge_level']
-    max_energy_level = data['max_energy_level']
-    max_days_for_return = data['max_days_for_return']
-    
-    cexio_clicker    = data['cexio_clicker']
-    tapswap_clicker  = data['tapswap_clicker']
     hamster_clicker  = data['hamster_clicker']
     blum_clicker     = data['blum_clicker']
     rabbit_clicker   = data['rabbit_clicker']
